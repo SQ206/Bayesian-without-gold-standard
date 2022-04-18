@@ -1,9 +1,9 @@
-#=========================================
+#=======================================
 # Replace the directory where you have saved your files.
-#=========================================
+#=======================================
 
 # Check if program syntax is correct
-check('C:/Users/Desktop/independent.txt')
+check('C:/Users/Desktop/covriance.txt')
 
 # Read data
 data('C:/Users/Desktop/data.txt')
@@ -26,6 +26,8 @@ set(sen1)
 set(spec1)
 set(sen2)
 set(spec2)
+set(covp12)
+set(covn12)
 set(ppv1)
 set(npv1)
 set(ppv2)
