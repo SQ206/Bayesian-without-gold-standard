@@ -1,0 +1,47 @@
+#=========================================
+# Replace the directory where you have saved your files.
+#=========================================
+
+# Check if program syntax is correct
+check('C:/Users/Desktop/independent.txt')
+
+# Read data
+data('C:/Users/Desktop/data.txt')
+
+
+# Compile program
+compile(1)
+
+
+# Read initial values for unobserved random variables
+inits(1,'C:/Users/Desktop/inits.txt')
+gen.inits()
+
+# Start Gibbs sampler
+update(50000)
+
+# Keep samples of the following parameters
+set(pi)
+set(sen1)
+set(spec1)
+set(sen2)
+set(spec2)
+set(ppv1)
+set(npv1)
+set(ppv2)
+set(npv2)
+
+# Run the Gibbs sampler for more iterations
+update(100000)
+
+# History plots of the parameters of interest
+history(*)
+
+# Posterior density plots of the parameters of interest
+density(*)
+
+# Summary statistics of the parameters of interest
+stats(*)
+
+
+

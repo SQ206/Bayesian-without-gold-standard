@@ -1,0 +1,35 @@
+## sen1: sensitivity of T1;                               sen2: sensitivity of T2;  
+## spec1: specificity of T1;                             spec2: specificty of T2; 
+## ppv1: positive predictive value of T1;      ppv2: positive predictive value of T2;
+## npv1: negative predictive value of T1;     npv2: negative predictive value of T2;
+
+model 
+{
+#==============================
+# likelihood of observed data
+#===============================
+y[1:4] ~ dmulti(p[1:4], N)
+
+#==================================================
+# probabilities of different cross-classifications of two calling methods
+#==================================================
+p[1]<- pi*(sen1*sen2+covs12)+(1-pi)*((1-spec1)*(1-spec2))
+p[2]<- pi*(sen1*(1-sen2))+(1-pi)*((1-spec1)*spec2)
+p[3]<- pi*((1-sen1)*sen2)+(1-pi)*(spec1*(1-spec2))
+p[4]<- pi*((1-sen1)*(1-sen2))+(1-pi)*(spec1*spec2)
+
+#=================================================
+# prior distributions of prevalence, sensitivities and specificities
+#=================================================
+pi~ dbeta(alpha.pi,beta.pi)
+sen1~dbeta(alpha.sen1,beta.sen1)
+spec1~dbeta(alpha.spec1,beta.spec1)
+sen2~dbeta(alpha.sen2,beta.sen2)
+spec2~dbeta(alpha.spec2,beta.spec2)
+
+ppv1<- sen1*pi / (sen1*pi + (1-spec1)*(1-pi))
+npv1 <- spec1*(1-pi) / (spec1*(1-pi) + (1-sen1)*pi)
+ppv2<- sen2*pi / (sen2*pi + (1-spec2)*(1-pi))
+npv2 <- spec2*(1-pi) / (spec2*(1-pi) + (1-sen2)*pi)
+
+}

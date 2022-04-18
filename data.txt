@@ -1,0 +1,1 @@
+list(y=c(285,125,76,385),N=871,alpha.pi=1,beta.pi=1,alpha.sen1=42.57,beta.sen1=5.62,alpha.spec1=130.71,beta.spec1=15.41,alpha.sen2=99.70,beta.sen2=6.19,alpha.spec2=75.05,beta.spec2=3.75)
