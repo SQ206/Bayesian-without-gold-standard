@@ -3,7 +3,7 @@
 #=========================================
 
 # Check if program syntax is correct
-check('C:/Users/Desktop/independent.txt')
+check('C:/Users/Desktop/dependent.txt')
 
 # Read data
 data('C:/Users/Desktop/data.txt')
