@@ -26,10 +26,4 @@ sen1~dbeta(alpha.sen1,beta.sen1)
 spec1~dbeta(alpha.spec1,beta.spec1)
 sen2~dbeta(alpha.sen2,beta.sen2)
 spec2~dbeta(alpha.spec2,beta.spec2)
-
-ppv1<- sen1*pi / (sen1*pi + (1-spec1)*(1-pi))
-npv1 <- spec1*(1-pi) / (spec1*(1-pi) + (1-sen1)*pi)
-ppv2<- sen2*pi / (sen2*pi + (1-spec2)*(1-pi))
-npv2 <- spec2*(1-pi) / (spec2*(1-pi) + (1-sen2)*pi)
-
 }
