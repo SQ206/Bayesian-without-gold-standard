@@ -13,7 +13,7 @@ y[1:4] ~ dmulti(p[1:4], N)
 #==================================================
 # probabilities of different cross-classifications of two calling methods
 #==================================================
-p[1]<- pi*(sen1*sen2+covs12)+(1-pi)*((1-spec1)*(1-spec2))
+p[1]<- pi*sen1*sen2+(1-pi)*((1-spec1)*(1-spec2))
 p[2]<- pi*(sen1*(1-sen2))+(1-pi)*((1-spec1)*spec2)
 p[3]<- pi*((1-sen1)*sen2)+(1-pi)*(spec1*(1-spec2))
 p[4]<- pi*((1-sen1)*(1-sen2))+(1-pi)*(spec1*spec2)
